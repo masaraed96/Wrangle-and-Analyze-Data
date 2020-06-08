@@ -25,31 +25,31 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "- <a href=\"#import\">Import Libraries</a></li>\n",
+    "- <a href=\"#import\">Import Libraries</a>\n",
     "\n",
-    "- <a href=\"#gather\">Gathering Data</a></li>\n",
+    "- <a href=\"#gather\">Gathering Data</a>\n",
     "\n",
-    "  - <a href=\"#csv\">Enhanced Twitter Archive</a></li>\n",
+    "  - <a href=\"#csv\">Enhanced Twitter Archive</a>\n",
     "  \n",
-    "  - <a href=\"#tsv\">Image Predictions File</a></li>\n",
+    "  - <a href=\"#tsv\">Image Predictions File</a>\n",
     "  \n",
-    "  - <a href=\"#api\">Additional Data via the Twitter API</a></li>\n",
+    "  - <a href=\"#api\">Additional Data via the Twitter API</a>\n",
     "  \n",
-    "- <a href=\"#assess\">Assessing Data </a></li>\n",
+    "- <a href=\"#assess\">Assessing Data </a>\n",
     "\n",
-    "  - <a href=\"#assess_csv\">Assess Archieved Data</a></li>\n",
+    "  - <a href=\"#assess_csv\">Assess Archieved Data</a>\n",
     "  \n",
-    "  - <a href=\"#assess_tsv\">Assess Image Predictions Data</a></li>\n",
+    "  - <a href=\"#assess_tsv\">Assess Image Predictions Data</a>\n",
     "  \n",
-    "  - <a href=\"#assess_api\">Assess Tweets from Twitter API Data</a></li>\n",
+    "  - <a href=\"#assess_api\">Assess Tweets from Twitter API Data</a>\n",
     "  \n",
-    "  - <a href=\"#assess_summary\">Summary findings</a></li>\n",
+    "  - <a href=\"#assess_summary\">Summary findings</a>\n",
     "  \n",
-    "- <a href=\"#clean\">Cleaning Data</a></li>\n",
+    "- <a href=\"#clean\">Cleaning Data</a>\n",
     "\n",
-    "- <a href=\"#store\">Storing Data</a></li>\n",
+    "- <a href=\"#store\">Storing Data</a>\n",
     "\n",
-    "- <a href=\"#Visual\">Analyzing and Visualizing Data</a></li>"
+    "- <a href=\"#Visual\">Analyzing and Visualizing Data</a>"
    ]
   },
   {
@@ -64,7 +64,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 248,
+   "execution_count": 115,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -113,7 +113,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 249,
+   "execution_count": 116,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -131,7 +131,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 250,
+   "execution_count": 117,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -155,9 +155,26 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 118,
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "ename": "TweepError",
+     "evalue": "[{'code': 89, 'message': 'Invalid or expired token.'}]",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mTweepError\u001b[0m                                Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-118-99a64d35ab87>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m     12\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     13\u001b[0m \u001b[0mapi\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mtweepy\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mAPI\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mauth\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mwait_on_rate_limit\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mTrue\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 14\u001b[0;31m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mapi\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mme\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mname\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     15\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     16\u001b[0m \u001b[0mtweets_ids\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mlist\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mtwitter_archived\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mtweet_id\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mvalues\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/Library/Python/3.7/lib/python/site-packages/tweepy/api.py\u001b[0m in \u001b[0;36mme\u001b[0;34m(self)\u001b[0m\n\u001b[1;32m    352\u001b[0m     \u001b[0;32mdef\u001b[0m \u001b[0mme\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    353\u001b[0m         \u001b[0;34m\"\"\" Get the authenticated user \"\"\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 354\u001b[0;31m         \u001b[0;32mreturn\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_user\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mscreen_name\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mauth\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mget_username\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    355\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    356\u001b[0m     \u001b[0;34m@\u001b[0m\u001b[0mproperty\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/Library/Python/3.7/lib/python/site-packages/tweepy/auth.py\u001b[0m in \u001b[0;36mget_username\u001b[0;34m(self)\u001b[0m\n\u001b[1;32m    138\u001b[0m         \u001b[0;32mif\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0musername\u001b[0m \u001b[0;32mis\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    139\u001b[0m             \u001b[0mapi\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mAPI\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 140\u001b[0;31m             \u001b[0muser\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mapi\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mverify_credentials\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    141\u001b[0m             \u001b[0;32mif\u001b[0m \u001b[0muser\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    142\u001b[0m                 \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0musername\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0muser\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mscreen_name\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/Library/Python/3.7/lib/python/site-packages/tweepy/api.py\u001b[0m in \u001b[0;36mverify_credentials\u001b[0;34m(self, **kargs)\u001b[0m\n\u001b[1;32m    603\u001b[0m                 \u001b[0mrequire_auth\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mTrue\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    604\u001b[0m                 \u001b[0mallowed_param\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m'include_entities'\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'skip_status'\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'include_email'\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 605\u001b[0;31m             )(**kargs)\n\u001b[0m\u001b[1;32m    606\u001b[0m         \u001b[0;32mexcept\u001b[0m \u001b[0mTweepError\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0me\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    607\u001b[0m             \u001b[0;32mif\u001b[0m \u001b[0me\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mresponse\u001b[0m \u001b[0;32mand\u001b[0m \u001b[0me\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mresponse\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mstatus\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0;36m401\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/Library/Python/3.7/lib/python/site-packages/tweepy/binder.py\u001b[0m in \u001b[0;36m_call\u001b[0;34m(*args, **kwargs)\u001b[0m\n\u001b[1;32m    248\u001b[0m                 \u001b[0;32mreturn\u001b[0m \u001b[0mmethod\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    249\u001b[0m             \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 250\u001b[0;31m                 \u001b[0;32mreturn\u001b[0m \u001b[0mmethod\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mexecute\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    251\u001b[0m         \u001b[0;32mfinally\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    252\u001b[0m             \u001b[0mmethod\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msession\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mclose\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32m~/Library/Python/3.7/lib/python/site-packages/tweepy/binder.py\u001b[0m in \u001b[0;36mexecute\u001b[0;34m(self)\u001b[0m\n\u001b[1;32m    231\u001b[0m                     \u001b[0;32mraise\u001b[0m \u001b[0mRateLimitError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0merror_msg\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mresp\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    232\u001b[0m                 \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 233\u001b[0;31m                     \u001b[0;32mraise\u001b[0m \u001b[0mTweepError\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0merror_msg\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mresp\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mapi_code\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mapi_error_code\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    234\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    235\u001b[0m             \u001b[0;31m# Parse the response payload\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mTweepError\u001b[0m: [{'code': 89, 'message': 'Invalid or expired token.'}]"
+     ]
+    }
+   ],
    "source": [
     "#import data from twitter api\n",
     "consumer_key = 'HIDDEN'\n",
@@ -195,7 +212,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 252,
+   "execution_count": null,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -222,418 +239,47 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 253,
+   "execution_count": null,
    "metadata": {
     "scrolled": false
    },
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<div>\n",
-       "<style scoped>\n",
-       "    .dataframe tbody tr th:only-of-type {\n",
-       "        vertical-align: middle;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe tbody tr th {\n",
-       "        vertical-align: top;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe thead th {\n",
-       "        text-align: right;\n",
-       "    }\n",
-       "</style>\n",
-       "<table border=\"1\" class=\"dataframe\">\n",
-       "  <thead>\n",
-       "    <tr style=\"text-align: right;\">\n",
-       "      <th></th>\n",
-       "      <th>tweet_id</th>\n",
-       "      <th>in_reply_to_status_id</th>\n",
-       "      <th>in_reply_to_user_id</th>\n",
-       "      <th>timestamp</th>\n",
-       "      <th>source</th>\n",
-       "      <th>text</th>\n",
-       "      <th>retweeted_status_id</th>\n",
-       "      <th>retweeted_status_user_id</th>\n",
-       "      <th>retweeted_status_timestamp</th>\n",
-       "      <th>expanded_urls</th>\n",
-       "      <th>rating_numerator</th>\n",
-       "      <th>rating_denominator</th>\n",
-       "      <th>name</th>\n",
-       "      <th>doggo</th>\n",
-       "      <th>floofer</th>\n",
-       "      <th>pupper</th>\n",
-       "      <th>puppo</th>\n",
-       "    </tr>\n",
-       "  </thead>\n",
-       "  <tbody>\n",
-       "    <tr>\n",
-       "      <th>1820</th>\n",
-       "      <td>676588346097852417</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>2015-12-15 02:23:26 +0000</td>\n",
-       "      <td>&lt;a href=\"http://twitter.com/download/iphone\" r...</td>\n",
-       "      <td>This is Bubbles. He kinda resembles a fish. Al...</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>https://twitter.com/dog_rates/status/676588346...</td>\n",
-       "      <td>5</td>\n",
-       "      <td>10</td>\n",
-       "      <td>Bubbles</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>2159</th>\n",
-       "      <td>669571471778410496</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>2015-11-25 17:40:53 +0000</td>\n",
-       "      <td>&lt;a href=\"http://twitter.com/download/iphone\" r...</td>\n",
-       "      <td>This is Keith. He's had 13 DUIs. 7/10 that's t...</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>https://twitter.com/dog_rates/status/669571471...</td>\n",
-       "      <td>7</td>\n",
-       "      <td>10</td>\n",
-       "      <td>Keith</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>2162</th>\n",
-       "      <td>669393256313184256</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>2015-11-25 05:52:43 +0000</td>\n",
-       "      <td>&lt;a href=\"http://twitter.com/download/iphone\" r...</td>\n",
-       "      <td>Meet Ronduh. She's a Finnish Checkered Blitzkr...</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>https://twitter.com/dog_rates/status/669393256...</td>\n",
-       "      <td>10</td>\n",
-       "      <td>10</td>\n",
-       "      <td>Ronduh</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>1726</th>\n",
-       "      <td>680055455951884288</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>2015-12-24 16:00:30 +0000</td>\n",
-       "      <td>&lt;a href=\"https://about.twitter.com/products/tw...</td>\n",
-       "      <td>Meet Sammy. At first I was like \"that's a snow...</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>https://twitter.com/dog_rates/status/680055455...</td>\n",
-       "      <td>10</td>\n",
-       "      <td>10</td>\n",
-       "      <td>Sammy</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>1100</th>\n",
-       "      <td>735648611367784448</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>2016-05-26 01:47:51 +0000</td>\n",
-       "      <td>&lt;a href=\"http://twitter.com/download/iphone\" r...</td>\n",
-       "      <td>*faints* 12/10 perfection in pupper form https...</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>NaN</td>\n",
-       "      <td>https://twitter.com/dog_rates/status/735648611...</td>\n",
-       "      <td>12</td>\n",
-       "      <td>10</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "      <td>None</td>\n",
-       "      <td>pupper</td>\n",
-       "      <td>None</td>\n",
-       "    </tr>\n",
-       "  </tbody>\n",
-       "</table>\n",
-       "</div>"
-      ],
-      "text/plain": [
-       "                tweet_id  in_reply_to_status_id  in_reply_to_user_id  \\\n",
-       "1820  676588346097852417                    NaN                  NaN   \n",
-       "2159  669571471778410496                    NaN                  NaN   \n",
-       "2162  669393256313184256                    NaN                  NaN   \n",
-       "1726  680055455951884288                    NaN                  NaN   \n",
-       "1100  735648611367784448                    NaN                  NaN   \n",
-       "\n",
-       "                      timestamp  \\\n",
-       "1820  2015-12-15 02:23:26 +0000   \n",
-       "2159  2015-11-25 17:40:53 +0000   \n",
-       "2162  2015-11-25 05:52:43 +0000   \n",
-       "1726  2015-12-24 16:00:30 +0000   \n",
-       "1100  2016-05-26 01:47:51 +0000   \n",
-       "\n",
-       "                                                 source  \\\n",
-       "1820  <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "2159  <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "2162  <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "1726  <a href=\"https://about.twitter.com/products/tw...   \n",
-       "1100  <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "\n",
-       "                                                   text  retweeted_status_id  \\\n",
-       "1820  This is Bubbles. He kinda resembles a fish. Al...                  NaN   \n",
-       "2159  This is Keith. He's had 13 DUIs. 7/10 that's t...                  NaN   \n",
-       "2162  Meet Ronduh. She's a Finnish Checkered Blitzkr...                  NaN   \n",
-       "1726  Meet Sammy. At first I was like \"that's a snow...                  NaN   \n",
-       "1100  *faints* 12/10 perfection in pupper form https...                  NaN   \n",
-       "\n",
-       "      retweeted_status_user_id retweeted_status_timestamp  \\\n",
-       "1820                       NaN                        NaN   \n",
-       "2159                       NaN                        NaN   \n",
-       "2162                       NaN                        NaN   \n",
-       "1726                       NaN                        NaN   \n",
-       "1100                       NaN                        NaN   \n",
-       "\n",
-       "                                          expanded_urls  rating_numerator  \\\n",
-       "1820  https://twitter.com/dog_rates/status/676588346...                 5   \n",
-       "2159  https://twitter.com/dog_rates/status/669571471...                 7   \n",
-       "2162  https://twitter.com/dog_rates/status/669393256...                10   \n",
-       "1726  https://twitter.com/dog_rates/status/680055455...                10   \n",
-       "1100  https://twitter.com/dog_rates/status/735648611...                12   \n",
-       "\n",
-       "      rating_denominator     name doggo floofer  pupper puppo  \n",
-       "1820                  10  Bubbles  None    None    None  None  \n",
-       "2159                  10    Keith  None    None    None  None  \n",
-       "2162                  10   Ronduh  None    None    None  None  \n",
-       "1726                  10    Sammy  None    None    None  None  \n",
-       "1100                  10     None  None    None  pupper  None  "
-      ]
-     },
-     "execution_count": 253,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "enhanced_twitter_archived.sample(5)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 254,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "<class 'pandas.core.frame.DataFrame'>\n",
-      "RangeIndex: 2356 entries, 0 to 2355\n",
-      "Data columns (total 17 columns):\n",
-      " #   Column                      Non-Null Count  Dtype  \n",
-      "---  ------                      --------------  -----  \n",
-      " 0   tweet_id                    2356 non-null   int64  \n",
-      " 1   in_reply_to_status_id       78 non-null     float64\n",
-      " 2   in_reply_to_user_id         78 non-null     float64\n",
-      " 3   timestamp                   2356 non-null   object \n",
-      " 4   source                      2356 non-null   object \n",
-      " 5   text                        2356 non-null   object \n",
-      " 6   retweeted_status_id         181 non-null    float64\n",
-      " 7   retweeted_status_user_id    181 non-null    float64\n",
-      " 8   retweeted_status_timestamp  181 non-null    object \n",
-      " 9   expanded_urls               2297 non-null   object \n",
-      " 10  rating_numerator            2356 non-null   int64  \n",
-      " 11  rating_denominator          2356 non-null   int64  \n",
-      " 12  name                        2356 non-null   object \n",
-      " 13  doggo                       2356 non-null   object \n",
-      " 14  floofer                     2356 non-null   object \n",
-      " 15  pupper                      2356 non-null   object \n",
-      " 16  puppo                       2356 non-null   object \n",
-      "dtypes: float64(4), int64(3), object(10)\n",
-      "memory usage: 313.0+ KB\n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "enhanced_twitter_archived.info()"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 255,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "<bound method NDFrame.describe of                 tweet_id  in_reply_to_status_id  in_reply_to_user_id  \\\n",
-       "0     892420643555336193                    NaN                  NaN   \n",
-       "1     892177421306343426                    NaN                  NaN   \n",
-       "2     891815181378084864                    NaN                  NaN   \n",
-       "3     891689557279858688                    NaN                  NaN   \n",
-       "4     891327558926688256                    NaN                  NaN   \n",
-       "...                  ...                    ...                  ...   \n",
-       "2351  666049248165822465                    NaN                  NaN   \n",
-       "2352  666044226329800704                    NaN                  NaN   \n",
-       "2353  666033412701032449                    NaN                  NaN   \n",
-       "2354  666029285002620928                    NaN                  NaN   \n",
-       "2355  666020888022790149                    NaN                  NaN   \n",
-       "\n",
-       "                      timestamp  \\\n",
-       "0     2017-08-01 16:23:56 +0000   \n",
-       "1     2017-08-01 00:17:27 +0000   \n",
-       "2     2017-07-31 00:18:03 +0000   \n",
-       "3     2017-07-30 15:58:51 +0000   \n",
-       "4     2017-07-29 16:00:24 +0000   \n",
-       "...                         ...   \n",
-       "2351  2015-11-16 00:24:50 +0000   \n",
-       "2352  2015-11-16 00:04:52 +0000   \n",
-       "2353  2015-11-15 23:21:54 +0000   \n",
-       "2354  2015-11-15 23:05:30 +0000   \n",
-       "2355  2015-11-15 22:32:08 +0000   \n",
-       "\n",
-       "                                                 source  \\\n",
-       "0     <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "1     <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "2     <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "3     <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "4     <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "...                                                 ...   \n",
-       "2351  <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "2352  <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "2353  <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "2354  <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "2355  <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "\n",
-       "                                                   text  retweeted_status_id  \\\n",
-       "0     This is Phineas. He's a mystical boy. Only eve...                  NaN   \n",
-       "1     This is Tilly. She's just checking pup on you....                  NaN   \n",
-       "2     This is Archie. He is a rare Norwegian Pouncin...                  NaN   \n",
-       "3     This is Darla. She commenced a snooze mid meal...                  NaN   \n",
-       "4     This is Franklin. He would like you to stop ca...                  NaN   \n",
-       "...                                                 ...                  ...   \n",
-       "2351  Here we have a 1949 1st generation vulpix. Enj...                  NaN   \n",
-       "2352  This is a purebred Piers Morgan. Loves to Netf...                  NaN   \n",
-       "2353  Here is a very happy pup. Big fan of well-main...                  NaN   \n",
-       "2354  This is a western brown Mitsubishi terrier. Up...                  NaN   \n",
-       "2355  Here we have a Japanese Irish Setter. Lost eye...                  NaN   \n",
-       "\n",
-       "      retweeted_status_user_id retweeted_status_timestamp  \\\n",
-       "0                          NaN                        NaN   \n",
-       "1                          NaN                        NaN   \n",
-       "2                          NaN                        NaN   \n",
-       "3                          NaN                        NaN   \n",
-       "4                          NaN                        NaN   \n",
-       "...                        ...                        ...   \n",
-       "2351                       NaN                        NaN   \n",
-       "2352                       NaN                        NaN   \n",
-       "2353                       NaN                        NaN   \n",
-       "2354                       NaN                        NaN   \n",
-       "2355                       NaN                        NaN   \n",
-       "\n",
-       "                                          expanded_urls  rating_numerator  \\\n",
-       "0     https://twitter.com/dog_rates/status/892420643...                13   \n",
-       "1     https://twitter.com/dog_rates/status/892177421...                13   \n",
-       "2     https://twitter.com/dog_rates/status/891815181...                12   \n",
-       "3     https://twitter.com/dog_rates/status/891689557...                13   \n",
-       "4     https://twitter.com/dog_rates/status/891327558...                12   \n",
-       "...                                                 ...               ...   \n",
-       "2351  https://twitter.com/dog_rates/status/666049248...                 5   \n",
-       "2352  https://twitter.com/dog_rates/status/666044226...                 6   \n",
-       "2353  https://twitter.com/dog_rates/status/666033412...                 9   \n",
-       "2354  https://twitter.com/dog_rates/status/666029285...                 7   \n",
-       "2355  https://twitter.com/dog_rates/status/666020888...                 8   \n",
-       "\n",
-       "      rating_denominator      name doggo floofer pupper puppo  \n",
-       "0                     10   Phineas  None    None   None  None  \n",
-       "1                     10     Tilly  None    None   None  None  \n",
-       "2                     10    Archie  None    None   None  None  \n",
-       "3                     10     Darla  None    None   None  None  \n",
-       "4                     10  Franklin  None    None   None  None  \n",
-       "...                  ...       ...   ...     ...    ...   ...  \n",
-       "2351                  10      None  None    None   None  None  \n",
-       "2352                  10         a  None    None   None  None  \n",
-       "2353                  10         a  None    None   None  None  \n",
-       "2354                  10         a  None    None   None  None  \n",
-       "2355                  10      None  None    None   None  None  \n",
-       "\n",
-       "[2356 rows x 17 columns]>"
-      ]
-     },
-     "execution_count": 255,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "enhanced_twitter_archived.describe"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 256,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Number of duplicated Tweets: 0 \n"
-     ]
-    }
-   ],
+   "outputs": [],
    "source": [
     "print(f'Number of duplicated Tweets: {int(sum(enhanced_twitter_archived.tweet_id.duplicated()))} ')"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 257,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Dogs' names:\n"
-     ]
-    },
-    {
-     "data": {
-      "text/plain": [
-       "None        745\n",
-       "a            55\n",
-       "Charlie      12\n",
-       "Cooper       11\n",
-       "Lucy         11\n",
-       "           ... \n",
-       "Aldrick       1\n",
-       "Juckson       1\n",
-       "Marq          1\n",
-       "Brockly       1\n",
-       "Griswold      1\n",
-       "Name: name, Length: 957, dtype: int64"
-      ]
-     },
-     "execution_count": 257,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "print('Dogs\\' names:')\n",
     "enhanced_twitter_archived.name.value_counts()"
@@ -641,30 +287,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 258,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Rating numerators:\n"
-     ]
-    },
-    {
-     "data": {
-      "text/plain": [
-       "array([  13,   12,   14,    5,   17,   11,   10,  420,  666,    6,   15,\n",
-       "        182,  960,    0,   75,    7,   84,    9,   24,    8,    1,   27,\n",
-       "          3,    4,  165, 1776,  204,   50,   99,   80,   45,   60,   44,\n",
-       "        143,  121,   20,   26,    2,  144,   88])"
-      ]
-     },
-     "execution_count": 258,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "print('Rating numerators:')\n",
     "enhanced_twitter_archived.rating_numerator.unique()"
@@ -672,28 +297,9 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 259,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "Rating denominator:\n"
-     ]
-    },
-    {
-     "data": {
-      "text/plain": [
-       "array([ 10,   0,  15,  70,   7,  11, 150, 170,  20,  50,  90,  80,  40,\n",
-       "       130, 110,  16, 120,   2])"
-      ]
-     },
-     "execution_count": 259,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "print('Rating denominator:')\n",
     "enhanced_twitter_archived.rating_denominator.unique()"
@@ -709,166 +315,16 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 260,
+   "execution_count": null,
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/html": [
-       "<div>\n",
-       "<style scoped>\n",
-       "    .dataframe tbody tr th:only-of-type {\n",
-       "        vertical-align: middle;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe tbody tr th {\n",
-       "        vertical-align: top;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe thead th {\n",
-       "        text-align: right;\n",
-       "    }\n",
-       "</style>\n",
-       "<table border=\"1\" class=\"dataframe\">\n",
-       "  <thead>\n",
-       "    <tr style=\"text-align: right;\">\n",
-       "      <th></th>\n",
-       "      <th>tweet_id</th>\n",
-       "      <th>jpg_url</th>\n",
-       "      <th>img_num</th>\n",
-       "      <th>p1</th>\n",
-       "      <th>p1_conf</th>\n",
-       "      <th>p1_dog</th>\n",
-       "      <th>p2</th>\n",
-       "      <th>p2_conf</th>\n",
-       "      <th>p2_dog</th>\n",
-       "      <th>p3</th>\n",
-       "      <th>p3_conf</th>\n",
-       "      <th>p3_dog</th>\n",
-       "    </tr>\n",
-       "  </thead>\n",
-       "  <tbody>\n",
-       "    <tr>\n",
-       "      <th>1925</th>\n",
-       "      <td>857393404942143489</td>\n",
-       "      <td>https://pbs.twimg.com/media/C-YSwA_XgAEOr25.jpg</td>\n",
-       "      <td>3</td>\n",
-       "      <td>malamute</td>\n",
-       "      <td>0.841597</td>\n",
-       "      <td>True</td>\n",
-       "      <td>Siberian_husky</td>\n",
-       "      <td>0.073644</td>\n",
-       "      <td>True</td>\n",
-       "      <td>Eskimo_dog</td>\n",
-       "      <td>0.072129</td>\n",
-       "      <td>True</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>192</th>\n",
-       "      <td>669567591774625800</td>\n",
-       "      <td>https://pbs.twimg.com/media/CUrIK1DWoAAhECq.jpg</td>\n",
-       "      <td>1</td>\n",
-       "      <td>Chihuahua</td>\n",
-       "      <td>0.980511</td>\n",
-       "      <td>True</td>\n",
-       "      <td>toy_terrier</td>\n",
-       "      <td>0.009166</td>\n",
-       "      <td>True</td>\n",
-       "      <td>miniature_pinscher</td>\n",
-       "      <td>0.002659</td>\n",
-       "      <td>True</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>1537</th>\n",
-       "      <td>790698755171364864</td>\n",
-       "      <td>https://pbs.twimg.com/media/CvkgUjbUsAEvo7l.jpg</td>\n",
-       "      <td>1</td>\n",
-       "      <td>Bernese_mountain_dog</td>\n",
-       "      <td>0.996541</td>\n",
-       "      <td>True</td>\n",
-       "      <td>EntleBucher</td>\n",
-       "      <td>0.001057</td>\n",
-       "      <td>True</td>\n",
-       "      <td>Appenzeller</td>\n",
-       "      <td>0.000998</td>\n",
-       "      <td>True</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>66</th>\n",
-       "      <td>667176164155375616</td>\n",
-       "      <td>https://pbs.twimg.com/media/CUJJLtWWsAE-go5.jpg</td>\n",
-       "      <td>1</td>\n",
-       "      <td>soft-coated_wheaten_terrier</td>\n",
-       "      <td>0.318981</td>\n",
-       "      <td>True</td>\n",
-       "      <td>Lakeland_terrier</td>\n",
-       "      <td>0.215218</td>\n",
-       "      <td>True</td>\n",
-       "      <td>toy_poodle</td>\n",
-       "      <td>0.106014</td>\n",
-       "      <td>True</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>1734</th>\n",
-       "      <td>821522889702862852</td>\n",
-       "      <td>https://pbs.twimg.com/media/C2aitIUXAAAG-Wi.jpg</td>\n",
-       "      <td>1</td>\n",
-       "      <td>Doberman</td>\n",
-       "      <td>0.763539</td>\n",
-       "      <td>True</td>\n",
-       "      <td>black-and-tan_coonhound</td>\n",
-       "      <td>0.136602</td>\n",
-       "      <td>True</td>\n",
-       "      <td>miniature_pinscher</td>\n",
-       "      <td>0.087654</td>\n",
-       "      <td>True</td>\n",
-       "    </tr>\n",
-       "  </tbody>\n",
-       "</table>\n",
-       "</div>"
-      ],
-      "text/plain": [
-       "                tweet_id                                          jpg_url  \\\n",
-       "1925  857393404942143489  https://pbs.twimg.com/media/C-YSwA_XgAEOr25.jpg   \n",
-       "192   669567591774625800  https://pbs.twimg.com/media/CUrIK1DWoAAhECq.jpg   \n",
-       "1537  790698755171364864  https://pbs.twimg.com/media/CvkgUjbUsAEvo7l.jpg   \n",
-       "66    667176164155375616  https://pbs.twimg.com/media/CUJJLtWWsAE-go5.jpg   \n",
-       "1734  821522889702862852  https://pbs.twimg.com/media/C2aitIUXAAAG-Wi.jpg   \n",
-       "\n",
-       "      img_num                           p1   p1_conf  p1_dog  \\\n",
-       "1925        3                     malamute  0.841597    True   \n",
-       "192         1                    Chihuahua  0.980511    True   \n",
-       "1537        1         Bernese_mountain_dog  0.996541    True   \n",
-       "66          1  soft-coated_wheaten_terrier  0.318981    True   \n",
-       "1734        1                     Doberman  0.763539    True   \n",
-       "\n",
-       "                           p2   p2_conf  p2_dog                  p3   p3_conf  \\\n",
-       "1925           Siberian_husky  0.073644    True          Eskimo_dog  0.072129   \n",
-       "192               toy_terrier  0.009166    True  miniature_pinscher  0.002659   \n",
-       "1537              EntleBucher  0.001057    True         Appenzeller  0.000998   \n",
-       "66           Lakeland_terrier  0.215218    True          toy_poodle  0.106014   \n",
-       "1734  black-and-tan_coonhound  0.136602    True  miniature_pinscher  0.087654   \n",
-       "\n",
-       "      p3_dog  \n",
-       "1925    True  \n",
-       "192     True  \n",
-       "1537    True  \n",
-       "66      True  \n",
-       "1734    True  "
-      ]
-     },
-     "execution_count": 260,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
+   "outputs": [],
    "source": [
     "image_predictions.sample(5)"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 261,
+   "execution_count": 119,
    "metadata": {
     "scrolled": true
    },
@@ -887,7 +343,7 @@
        "<IPython.core.display.Image object>"
       ]
      },
-     "execution_count": 261,
+     "execution_count": 119,
      "metadata": {
       "image/jpeg": {
        "height": 300,
@@ -905,7 +361,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 262,
+   "execution_count": 120,
    "metadata": {
     "scrolled": true
    },
@@ -942,7 +398,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 263,
+   "execution_count": 121,
    "metadata": {},
    "outputs": [
     {
@@ -990,7 +446,7 @@
        "[2075 rows x 12 columns]>"
       ]
      },
-     "execution_count": 263,
+     "execution_count": 121,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1001,7 +457,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 264,
+   "execution_count": 122,
    "metadata": {
     "scrolled": true
    },
@@ -1023,7 +479,7 @@
        "Name: jpg_url, Length: 2009, dtype: int64"
       ]
      },
-     "execution_count": 264,
+     "execution_count": 122,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1034,7 +490,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 265,
+   "execution_count": 123,
    "metadata": {},
    "outputs": [
     {
@@ -1059,7 +515,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 266,
+   "execution_count": 124,
    "metadata": {},
    "outputs": [
     {
@@ -1108,19 +564,19 @@
        "  </thead>\n",
        "  <tbody>\n",
        "    <tr>\n",
-       "      <th>130</th>\n",
-       "      <td>2017-05-23 16:16:06+00:00</td>\n",
-       "      <td>867051520902168576</td>\n",
-       "      <td>867051520902168576</td>\n",
-       "      <td>Oh my this spooked me up. We only rate dogs, n...</td>\n",
+       "      <th>1807</th>\n",
+       "      <td>2015-12-15 20:40:47+00:00</td>\n",
+       "      <td>676864501615042560</td>\n",
+       "      <td>676864501615042560</td>\n",
+       "      <td>Meet Ash. He's just a head now. Lost his body ...</td>\n",
        "      <td>False</td>\n",
-       "      <td>[0, 132]</td>\n",
+       "      <td>[0, 139]</td>\n",
        "      <td>{'hashtags': [], 'symbols': [], 'user_mentions...</td>\n",
-       "      <td>{'media': [{'id': 867051512509460480, 'id_str'...</td>\n",
+       "      <td>{'media': [{'id': 676864493910028289, 'id_str'...</td>\n",
        "      <td>&lt;a href=\"http://twitter.com/download/iphone\" r...</td>\n",
        "      <td>NaN</td>\n",
        "      <td>...</td>\n",
-       "      <td>33420</td>\n",
+       "      <td>2294</td>\n",
        "      <td>False</td>\n",
        "      <td>False</td>\n",
        "      <td>0.0</td>\n",
@@ -1132,19 +588,19 @@
        "      <td>NaN</td>\n",
        "    </tr>\n",
        "    <tr>\n",
-       "      <th>1847</th>\n",
-       "      <td>2015-12-12 20:57:34+00:00</td>\n",
-       "      <td>675781562965868544</td>\n",
-       "      <td>675781562965868544</td>\n",
-       "      <td>Say hello to Buddah. He was Waldo for Hallowee...</td>\n",
+       "      <th>1094</th>\n",
+       "      <td>2016-05-28 01:18:00+00:00</td>\n",
+       "      <td>736365877722001409</td>\n",
+       "      <td>736365877722001408</td>\n",
+       "      <td>This is Rory. He's extremely impatient. 11/10 ...</td>\n",
        "      <td>False</td>\n",
-       "      <td>[0, 78]</td>\n",
+       "      <td>[0, 64]</td>\n",
        "      <td>{'hashtags': [], 'symbols': [], 'user_mentions...</td>\n",
-       "      <td>{'media': [{'id': 675781559312506880, 'id_str'...</td>\n",
+       "      <td>{'media': [{'id': 736365798558728192, 'id_str'...</td>\n",
        "      <td>&lt;a href=\"http://twitter.com/download/iphone\" r...</td>\n",
        "      <td>NaN</td>\n",
        "      <td>...</td>\n",
-       "      <td>1750</td>\n",
+       "      <td>4367</td>\n",
        "      <td>False</td>\n",
        "      <td>False</td>\n",
        "      <td>0.0</td>\n",
@@ -1156,19 +612,19 @@
        "      <td>NaN</td>\n",
        "    </tr>\n",
        "    <tr>\n",
-       "      <th>9</th>\n",
-       "      <td>2017-07-26 15:59:51+00:00</td>\n",
-       "      <td>890240255349198849</td>\n",
-       "      <td>890240255349198848</td>\n",
-       "      <td>This is Cassie. She is a college pup. Studying...</td>\n",
+       "      <th>1493</th>\n",
+       "      <td>2016-01-28 02:30:58+00:00</td>\n",
+       "      <td>692535307825213440</td>\n",
+       "      <td>692535307825213440</td>\n",
+       "      <td>This is Amber. She's a Fetty Woof. 10/10 would...</td>\n",
        "      <td>False</td>\n",
-       "      <td>[0, 133]</td>\n",
+       "      <td>[0, 89]</td>\n",
        "      <td>{'hashtags': [], 'symbols': [], 'user_mentions...</td>\n",
-       "      <td>{'media': [{'id': 890240245463175168, 'id_str'...</td>\n",
+       "      <td>{'media': [{'id': 692535299021340674, 'id_str'...</td>\n",
        "      <td>&lt;a href=\"http://twitter.com/download/iphone\" r...</td>\n",
        "      <td>NaN</td>\n",
        "      <td>...</td>\n",
-       "      <td>32467</td>\n",
+       "      <td>3504</td>\n",
        "      <td>False</td>\n",
        "      <td>False</td>\n",
        "      <td>0.0</td>\n",
@@ -1180,19 +636,19 @@
        "      <td>NaN</td>\n",
        "    </tr>\n",
        "    <tr>\n",
-       "      <th>486</th>\n",
-       "      <td>2016-12-28 16:56:16+00:00</td>\n",
-       "      <td>814153002265309185</td>\n",
-       "      <td>814153002265309184</td>\n",
-       "      <td>This is Oshie. He's ready to party. Bought tha...</td>\n",
+       "      <th>349</th>\n",
+       "      <td>2017-02-14 17:17:22+00:00</td>\n",
+       "      <td>831552930092285952</td>\n",
+       "      <td>831552930092285952</td>\n",
+       "      <td>This is Dutch. He dressed up as his favorite e...</td>\n",
        "      <td>False</td>\n",
-       "      <td>[0, 109]</td>\n",
+       "      <td>[0, 117]</td>\n",
        "      <td>{'hashtags': [], 'symbols': [], 'user_mentions...</td>\n",
-       "      <td>{'media': [{'id': 814152984946876416, 'id_str'...</td>\n",
+       "      <td>{'media': [{'id': 831552915512901632, 'id_str'...</td>\n",
        "      <td>&lt;a href=\"http://twitter.com/download/iphone\" r...</td>\n",
        "      <td>NaN</td>\n",
        "      <td>...</td>\n",
-       "      <td>32000</td>\n",
+       "      <td>9872</td>\n",
        "      <td>False</td>\n",
        "      <td>False</td>\n",
        "      <td>0.0</td>\n",
@@ -1204,19 +660,19 @@
        "      <td>NaN</td>\n",
        "    </tr>\n",
        "    <tr>\n",
-       "      <th>894</th>\n",
-       "      <td>2016-07-29 18:53:24+00:00</td>\n",
-       "      <td>759099523532779520</td>\n",
-       "      <td>759099523532779520</td>\n",
-       "      <td>Meet Toby. He has a drinking problem. Inflatab...</td>\n",
+       "      <th>2077</th>\n",
+       "      <td>2015-11-29 04:47:03+00:00</td>\n",
+       "      <td>670826280409919488</td>\n",
+       "      <td>670826280409919488</td>\n",
+       "      <td>Scary dog here. Too many legs. Extra tail. Not...</td>\n",
        "      <td>False</td>\n",
-       "      <td>[0, 116]</td>\n",
+       "      <td>[0, 139]</td>\n",
        "      <td>{'hashtags': [], 'symbols': [], 'user_mentions...</td>\n",
-       "      <td>{'media': [{'id': 759099516616339456, 'id_str'...</td>\n",
+       "      <td>{'media': [{'id': 670826275943133184, 'id_str'...</td>\n",
        "      <td>&lt;a href=\"http://twitter.com/download/iphone\" r...</td>\n",
        "      <td>NaN</td>\n",
        "      <td>...</td>\n",
-       "      <td>16101</td>\n",
+       "      <td>5961</td>\n",
        "      <td>False</td>\n",
        "      <td>False</td>\n",
        "      <td>0.0</td>\n",
@@ -1234,65 +690,65 @@
       ],
       "text/plain": [
        "                    created_at                  id              id_str  \\\n",
-       "130  2017-05-23 16:16:06+00:00  867051520902168576  867051520902168576   \n",
-       "1847 2015-12-12 20:57:34+00:00  675781562965868544  675781562965868544   \n",
-       "9    2017-07-26 15:59:51+00:00  890240255349198849  890240255349198848   \n",
-       "486  2016-12-28 16:56:16+00:00  814153002265309185  814153002265309184   \n",
-       "894  2016-07-29 18:53:24+00:00  759099523532779520  759099523532779520   \n",
+       "1807 2015-12-15 20:40:47+00:00  676864501615042560  676864501615042560   \n",
+       "1094 2016-05-28 01:18:00+00:00  736365877722001409  736365877722001408   \n",
+       "1493 2016-01-28 02:30:58+00:00  692535307825213440  692535307825213440   \n",
+       "349  2017-02-14 17:17:22+00:00  831552930092285952  831552930092285952   \n",
+       "2077 2015-11-29 04:47:03+00:00  670826280409919488  670826280409919488   \n",
        "\n",
        "                                              full_text  truncated  \\\n",
-       "130   Oh my this spooked me up. We only rate dogs, n...      False   \n",
-       "1847  Say hello to Buddah. He was Waldo for Hallowee...      False   \n",
-       "9     This is Cassie. She is a college pup. Studying...      False   \n",
-       "486   This is Oshie. He's ready to party. Bought tha...      False   \n",
-       "894   Meet Toby. He has a drinking problem. Inflatab...      False   \n",
+       "1807  Meet Ash. He's just a head now. Lost his body ...      False   \n",
+       "1094  This is Rory. He's extremely impatient. 11/10 ...      False   \n",
+       "1493  This is Amber. She's a Fetty Woof. 10/10 would...      False   \n",
+       "349   This is Dutch. He dressed up as his favorite e...      False   \n",
+       "2077  Scary dog here. Too many legs. Extra tail. Not...      False   \n",
        "\n",
        "     display_text_range                                           entities  \\\n",
-       "130            [0, 132]  {'hashtags': [], 'symbols': [], 'user_mentions...   \n",
-       "1847            [0, 78]  {'hashtags': [], 'symbols': [], 'user_mentions...   \n",
-       "9              [0, 133]  {'hashtags': [], 'symbols': [], 'user_mentions...   \n",
-       "486            [0, 109]  {'hashtags': [], 'symbols': [], 'user_mentions...   \n",
-       "894            [0, 116]  {'hashtags': [], 'symbols': [], 'user_mentions...   \n",
+       "1807           [0, 139]  {'hashtags': [], 'symbols': [], 'user_mentions...   \n",
+       "1094            [0, 64]  {'hashtags': [], 'symbols': [], 'user_mentions...   \n",
+       "1493            [0, 89]  {'hashtags': [], 'symbols': [], 'user_mentions...   \n",
+       "349            [0, 117]  {'hashtags': [], 'symbols': [], 'user_mentions...   \n",
+       "2077           [0, 139]  {'hashtags': [], 'symbols': [], 'user_mentions...   \n",
        "\n",
        "                                      extended_entities  \\\n",
-       "130   {'media': [{'id': 867051512509460480, 'id_str'...   \n",
-       "1847  {'media': [{'id': 675781559312506880, 'id_str'...   \n",
-       "9     {'media': [{'id': 890240245463175168, 'id_str'...   \n",
-       "486   {'media': [{'id': 814152984946876416, 'id_str'...   \n",
-       "894   {'media': [{'id': 759099516616339456, 'id_str'...   \n",
+       "1807  {'media': [{'id': 676864493910028289, 'id_str'...   \n",
+       "1094  {'media': [{'id': 736365798558728192, 'id_str'...   \n",
+       "1493  {'media': [{'id': 692535299021340674, 'id_str'...   \n",
+       "349   {'media': [{'id': 831552915512901632, 'id_str'...   \n",
+       "2077  {'media': [{'id': 670826275943133184, 'id_str'...   \n",
        "\n",
        "                                                 source  \\\n",
-       "130   <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "1847  <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "9     <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "486   <a href=\"http://twitter.com/download/iphone\" r...   \n",
-       "894   <a href=\"http://twitter.com/download/iphone\" r...   \n",
+       "1807  <a href=\"http://twitter.com/download/iphone\" r...   \n",
+       "1094  <a href=\"http://twitter.com/download/iphone\" r...   \n",
+       "1493  <a href=\"http://twitter.com/download/iphone\" r...   \n",
+       "349   <a href=\"http://twitter.com/download/iphone\" r...   \n",
+       "2077  <a href=\"http://twitter.com/download/iphone\" r...   \n",
        "\n",
        "      in_reply_to_status_id  ...  favorite_count  favorited  retweeted  \\\n",
-       "130                     NaN  ...           33420      False      False   \n",
-       "1847                    NaN  ...            1750      False      False   \n",
-       "9                       NaN  ...           32467      False      False   \n",
-       "486                     NaN  ...           32000      False      False   \n",
-       "894                     NaN  ...           16101      False      False   \n",
+       "1807                    NaN  ...            2294      False      False   \n",
+       "1094                    NaN  ...            4367      False      False   \n",
+       "1493                    NaN  ...            3504      False      False   \n",
+       "349                     NaN  ...            9872      False      False   \n",
+       "2077                    NaN  ...            5961      False      False   \n",
        "\n",
        "     possibly_sensitive possibly_sensitive_appealable  lang  retweeted_status  \\\n",
-       "130                 0.0                           0.0    en               NaN   \n",
-       "1847                0.0                           0.0    en               NaN   \n",
-       "9                   0.0                           0.0    en               NaN   \n",
-       "486                 0.0                           0.0    en               NaN   \n",
-       "894                 0.0                           0.0    en               NaN   \n",
+       "1807                0.0                           0.0    en               NaN   \n",
+       "1094                0.0                           0.0    en               NaN   \n",
+       "1493                0.0                           0.0    en               NaN   \n",
+       "349                 0.0                           0.0    en               NaN   \n",
+       "2077                0.0                           0.0    en               NaN   \n",
        "\n",
        "     quoted_status_id  quoted_status_id_str  quoted_status  \n",
-       "130               NaN                   NaN            NaN  \n",
-       "1847              NaN                   NaN            NaN  \n",
-       "9                 NaN                   NaN            NaN  \n",
-       "486               NaN                   NaN            NaN  \n",
-       "894               NaN                   NaN            NaN  \n",
+       "1807              NaN                   NaN            NaN  \n",
+       "1094              NaN                   NaN            NaN  \n",
+       "1493              NaN                   NaN            NaN  \n",
+       "349               NaN                   NaN            NaN  \n",
+       "2077              NaN                   NaN            NaN  \n",
        "\n",
        "[5 rows x 31 columns]"
       ]
      },
-     "execution_count": 266,
+     "execution_count": 124,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1303,7 +759,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 267,
+   "execution_count": 125,
    "metadata": {},
    "outputs": [
     {
@@ -1357,7 +813,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 268,
+   "execution_count": 126,
    "metadata": {},
    "outputs": [
     {
@@ -1470,7 +926,7 @@
        "[2354 rows x 31 columns]>"
       ]
      },
-     "execution_count": 268,
+     "execution_count": 126,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1481,7 +937,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 269,
+   "execution_count": 127,
    "metadata": {},
    "outputs": [
     {
@@ -1571,7 +1027,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 270,
+   "execution_count": 128,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1583,7 +1039,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 271,
+   "execution_count": 129,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1593,7 +1049,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 272,
+   "execution_count": 130,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1617,7 +1073,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 273,
+   "execution_count": 131,
    "metadata": {},
    "outputs": [
     {
@@ -1647,7 +1103,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 274,
+   "execution_count": 132,
    "metadata": {},
    "outputs": [
     {
@@ -1684,7 +1140,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 275,
+   "execution_count": 133,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1701,7 +1157,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 276,
+   "execution_count": 134,
    "metadata": {},
    "outputs": [
     {
@@ -1736,7 +1192,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 277,
+   "execution_count": 135,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1753,7 +1209,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 278,
+   "execution_count": 136,
    "metadata": {},
    "outputs": [
     {
@@ -1789,7 +1245,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 279,
+   "execution_count": 137,
    "metadata": {},
    "outputs": [
     {
@@ -1808,7 +1264,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 280,
+   "execution_count": 138,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1819,7 +1275,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 281,
+   "execution_count": 139,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1836,7 +1292,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 282,
+   "execution_count": 140,
    "metadata": {
     "scrolled": true
    },
@@ -1874,7 +1330,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 283,
+   "execution_count": 141,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -1898,7 +1354,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 284,
+   "execution_count": 142,
    "metadata": {},
    "outputs": [
     {
@@ -1941,7 +1397,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 285,
+   "execution_count": 143,
    "metadata": {},
    "outputs": [
     {
@@ -1959,7 +1415,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 286,
+   "execution_count": 144,
    "metadata": {},
    "outputs": [
     {
@@ -1982,7 +1438,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 287,
+   "execution_count": 145,
    "metadata": {},
    "outputs": [
     {
@@ -1999,7 +1455,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 288,
+   "execution_count": 146,
    "metadata": {},
    "outputs": [
     {
@@ -2016,7 +1472,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 289,
+   "execution_count": 147,
    "metadata": {},
    "outputs": [
     {
@@ -2033,7 +1489,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 290,
+   "execution_count": 148,
    "metadata": {},
    "outputs": [
     {
@@ -2057,7 +1513,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 291,
+   "execution_count": 149,
    "metadata": {},
    "outputs": [
     {
@@ -2076,7 +1532,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 292,
+   "execution_count": 150,
    "metadata": {},
    "outputs": [
     {
@@ -2103,7 +1559,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 293,
+   "execution_count": 151,
    "metadata": {
     "scrolled": true
    },
@@ -2123,7 +1579,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 294,
+   "execution_count": 152,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -2138,7 +1594,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 295,
+   "execution_count": 153,
    "metadata": {},
    "outputs": [
     {
@@ -2147,7 +1603,7 @@
        "534"
       ]
      },
-     "execution_count": 295,
+     "execution_count": 153,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -2159,7 +1615,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 296,
+   "execution_count": 154,
    "metadata": {},
    "outputs": [
     {
@@ -2918,7 +2374,7 @@
        "[23 rows x 22 columns]"
       ]
      },
-     "execution_count": 296,
+     "execution_count": 154,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -2929,7 +2385,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 297,
+   "execution_count": 155,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -2940,7 +2396,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 298,
+   "execution_count": 156,
    "metadata": {},
    "outputs": [
     {
@@ -3699,7 +3155,7 @@
        "[23 rows x 22 columns]"
       ]
      },
-     "execution_count": 298,
+     "execution_count": 156,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -3710,7 +3166,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 299,
+   "execution_count": 157,
    "metadata": {},
    "outputs": [
     {
@@ -3989,7 +3445,7 @@
        "[7 rows x 22 columns]"
       ]
      },
-     "execution_count": 299,
+     "execution_count": 157,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -4000,7 +3456,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 300,
+   "execution_count": 158,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4010,7 +3466,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 301,
+   "execution_count": 159,
    "metadata": {},
    "outputs": [
     {
@@ -4289,7 +3745,7 @@
        "[7 rows x 22 columns]"
       ]
      },
-     "execution_count": 301,
+     "execution_count": 159,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -4300,7 +3756,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 302,
+   "execution_count": 160,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4309,7 +3765,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 303,
+   "execution_count": 161,
    "metadata": {},
    "outputs": [
     {
@@ -4318,7 +3774,7 @@
        "0"
       ]
      },
-     "execution_count": 303,
+     "execution_count": 161,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -4330,7 +3786,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 304,
+   "execution_count": 162,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4339,7 +3795,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 305,
+   "execution_count": 233,
    "metadata": {},
    "outputs": [
     {
@@ -4348,7 +3804,7 @@
        "0"
       ]
      },
-     "execution_count": 305,
+     "execution_count": 233,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -4359,14 +3815,14 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 306,
+   "execution_count": 234,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "number of names of length <=2: 53\n"
+      "number of names of length <=2: 9\n"
      ]
     }
    ],
@@ -4376,7 +3832,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 307,
+   "execution_count": 235,
    "metadata": {},
    "outputs": [
     {
@@ -4398,7 +3854,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 308,
+   "execution_count": 236,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4409,7 +3865,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 309,
+   "execution_count": 219,
    "metadata": {},
    "outputs": [
     {
@@ -4426,7 +3882,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 310,
+   "execution_count": 171,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4443,7 +3899,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 311,
+   "execution_count": 172,
    "metadata": {},
    "outputs": [
     {
@@ -4460,7 +3916,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 312,
+   "execution_count": 173,
    "metadata": {
     "scrolled": true
    },
@@ -4616,7 +4072,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 313,
+   "execution_count": 174,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4625,7 +4081,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 314,
+   "execution_count": 175,
    "metadata": {},
    "outputs": [
     {
@@ -4647,7 +4103,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 315,
+   "execution_count": 176,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4670,7 +4126,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 316,
+   "execution_count": 177,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4679,7 +4135,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 317,
+   "execution_count": 178,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4688,7 +4144,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 318,
+   "execution_count": 179,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4697,7 +4153,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 319,
+   "execution_count": 180,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4708,7 +4164,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 320,
+   "execution_count": 181,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4724,7 +4180,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 321,
+   "execution_count": 182,
    "metadata": {},
    "outputs": [
     {
@@ -4779,7 +4235,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 322,
+   "execution_count": 183,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4807,7 +4263,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 323,
+   "execution_count": 184,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4818,7 +4274,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 324,
+   "execution_count": 185,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4830,7 +4286,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 325,
+   "execution_count": 186,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4840,7 +4296,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 326,
+   "execution_count": 187,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4850,7 +4306,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 327,
+   "execution_count": 188,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4867,7 +4323,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 328,
+   "execution_count": 189,
    "metadata": {},
    "outputs": [
     {
@@ -4932,7 +4388,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 329,
+   "execution_count": 190,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4945,7 +4401,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 330,
+   "execution_count": 191,
    "metadata": {},
    "outputs": [
     {
@@ -4964,7 +4420,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 331,
+   "execution_count": 192,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4975,7 +4431,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 332,
+   "execution_count": 193,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4985,7 +4441,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 333,
+   "execution_count": 194,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -4994,7 +4450,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 334,
+   "execution_count": 195,
    "metadata": {},
    "outputs": [
     {
@@ -5027,7 +4483,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 335,
+   "execution_count": 196,
    "metadata": {},
    "outputs": [
     {
@@ -5097,7 +4553,7 @@
        "3667           4324       NaN       NaN       0.0      42.0  "
       ]
      },
-     "execution_count": 335,
+     "execution_count": 196,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -5108,7 +4564,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 336,
+   "execution_count": 197,
    "metadata": {},
    "outputs": [
     {
@@ -5125,7 +4581,7 @@
        "<IPython.core.display.Image object>"
       ]
      },
-     "execution_count": 336,
+     "execution_count": 197,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -5138,7 +4594,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 337,
+   "execution_count": 198,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -5149,7 +4605,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 338,
+   "execution_count": 199,
    "metadata": {},
    "outputs": [
     {
@@ -5219,7 +4675,7 @@
        "2693           2772       NaN       NaN       0.0     177.6  "
       ]
      },
-     "execution_count": 338,
+     "execution_count": 199,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -5230,7 +4686,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 339,
+   "execution_count": 200,
    "metadata": {},
    "outputs": [
     {
@@ -5247,7 +4703,7 @@
        "<IPython.core.display.Image object>"
       ]
      },
-     "execution_count": 339,
+     "execution_count": 200,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -5259,7 +4715,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 340,
+   "execution_count": 201,
    "metadata": {},
    "outputs": [
     {
@@ -5285,7 +4741,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 341,
+   "execution_count": 202,
    "metadata": {},
    "outputs": [
     {
@@ -5538,7 +4994,7 @@
        "[1970 rows x 11 columns]"
       ]
      },
-     "execution_count": 341,
+     "execution_count": 202,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -5560,7 +5016,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 342,
+   "execution_count": 203,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -5591,7 +5047,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 343,
+   "execution_count": 204,
    "metadata": {},
    "outputs": [
     {
@@ -5625,7 +5081,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 344,
+   "execution_count": 205,
    "metadata": {},
    "outputs": [
     {
@@ -5659,7 +5115,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 345,
+   "execution_count": 206,
    "metadata": {},
    "outputs": [
     {
@@ -5707,7 +5163,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 346,
+   "execution_count": 207,
    "metadata": {
     "scrolled": true
    },
@@ -5745,7 +5201,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 347,
+   "execution_count": 208,
    "metadata": {},
    "outputs": [
     {
@@ -5781,7 +5237,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 348,
+   "execution_count": 209,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -5791,7 +5247,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 349,
+   "execution_count": 210,
    "metadata": {},
    "outputs": [
     {
@@ -5810,7 +5266,7 @@
        "<IPython.core.display.Image object>"
       ]
      },
-     "execution_count": 349,
+     "execution_count": 210,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -5831,7 +5287,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 350,
+   "execution_count": 211,
    "metadata": {},
    "outputs": [],
    "source": [
@@ -5841,7 +5297,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 351,
+   "execution_count": 212,
    "metadata": {},
    "outputs": [
     {
@@ -5860,7 +5316,7 @@
        "<IPython.core.display.Image object>"
       ]
      },
-     "execution_count": 351,
+     "execution_count": 212,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -5869,13 +5325,6 @@
     "print('This puppo Lakeland terrier has received the highest favorites of all tweets!')\n",
     "Image(url = all_twitter_data_clean.loc[index_most_fav]['jpg_url'].unique()[0], width=200, height=300)"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
